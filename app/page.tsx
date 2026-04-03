@@ -1,9 +1,6 @@
-"use client";
-
-import { Plus_Jakarta_Sans, Be_Vietnam_Pro } from "next/font/google";
 import Image from "next/image";
+import { NavBar } from "@/components/nav-bar";
 
-import { useState } from "react";
 import {
   Cake,
   BrushCleaning,
@@ -11,30 +8,9 @@ import {
   Flower2,
   ArrowDown,
   ArrowRight,
-  MessageCircle,
-  Menu,
-  X,
   Palette,
   WandSparkles,
 } from "lucide-react";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-plus-jakarta",
-});
-
-const beVietnam = Be_Vietnam_Pro({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-be-vietnam",
-});
-
-const navItems = [
-  { label: "Portafolio", href: "#portafolio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Filosofía", href: "#filosofia" },
-];
 
 const services = [
   {
@@ -70,90 +46,15 @@ const services = [
 ];
 
 export default function Page() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <div
-      className={`${plusJakarta.variable} ${beVietnam.variable} min-h-screen bg-[#fdf8fd] text-[#1c1b1f] antialiased`}
-    >
-      <header className="fixed left-1/2 top-4 z-50 w-[92%] max-w-7xl -translate-x-1/2 md:top-6">
-        <div className="rounded-full border border-white/20 bg-white/70 px-4 py-3 shadow-2xl backdrop-blur-xl md:px-8 md:py-4">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/mangle-creative-logo.jpg"
-                alt="Logo de mangle"
-                className="h-9 w-auto md:h-10 rounded-full"
-                height={45}
-                width={45}
-              />
-            </div>
-
-            <nav className="hidden items-center gap-8 font-[var(--font-plus-jakarta)] text-sm font-bold uppercase tracking-[0.2em] text-[#49454f] lg:flex">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="transition-colors hover:text-[#644e8e]"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-
-            <div className="hidden lg:block">
-              <a
-                href="https://wa.me/584247233675"
-                className="inline-flex items-center gap-2 rounded-full bg-[#644e8e] px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105"
-              >
-                <MessageCircle className="h-4 w-4" />
-                Agenda ahora
-              </a>
-            </div>
-
-            <button
-              type="button"
-              aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#644e8e] text-white lg:hidden"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className="mt-4 rounded-3xl border border-[#e6e1e7] bg-white p-4 lg:hidden">
-              <nav className="flex flex-col gap-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="rounded-2xl px-4 py-3 text-sm font-bold uppercase tracking-[0.15em] text-[#49454f] transition-colors hover:bg-[#f8f2f8] hover:text-[#644e8e]"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-                <a
-                  href="https://wa.me/yourlink"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#644e8e] px-5 py-3 text-sm font-bold text-white"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Agenda por WhatsApp
-                </a>
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
+    <div className={`min-h-screen bg-[#fdf8fd] text-[#1c1b1f] antialiased`}>
+      <NavBar />
 
       <main>
-        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
+        <section
+          id="inicio"
+          className="relative flex min-h-svh items-center justify-center overflow-hidden"
+        >
           <div className="absolute inset-0">
             <Image
               src="/background.png"
@@ -188,7 +89,7 @@ export default function Page() {
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
-                  href="#portafolio"
+                  href="#servicios"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-lg font-black text-white shadow-2xl transition-all hover:scale-105 sm:w-auto md:px-10 md:py-5 md:text-xl"
                 >
                   Explora la magia
@@ -431,27 +332,6 @@ export default function Page() {
           </div>
         </section>
       </main>
-
-      <style jsx global>{`
-        html,
-        body {
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-          font-family: var(--font-be-vietnam), system-ui, sans-serif;
-        }
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-16px) rotate(4deg);
-          }
-        }
-      `}</style>
     </div>
   );
 }
