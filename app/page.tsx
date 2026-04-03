@@ -103,7 +103,7 @@ export default function Page() {
 
             <div className="hidden lg:block">
               <a
-                href="https://wa.me/yourlink"
+                href="https://wa.me/584247233675"
                 className="inline-flex items-center gap-2 rounded-full bg-[#644e8e] px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105"
               >
                 <MessageCircle className="h-4 w-4" />
