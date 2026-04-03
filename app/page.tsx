@@ -1,11 +1,10 @@
 "use client";
 
 import { Plus_Jakarta_Sans, Be_Vietnam_Pro } from "next/font/google";
+import Image from "next/image";
 
 import { useState } from "react";
 import {
-  Sparkles,
-  PartyPopper,
   Cake,
   BrushCleaning,
   Building2,
@@ -81,14 +80,13 @@ export default function Page() {
         <div className="rounded-full border border-white/20 bg-white/70 px-4 py-3 shadow-2xl backdrop-blur-xl md:px-8 md:py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmaMqfPmyCpS5iG9XgukBRyHYlX8GAQN2lM8KDbZhnf7AbJ6R5oZ_w1srpnJDCS6CmO5rdRRVbGZXsLtsRCIb1pCYOsfX_wjaGEIUi6Q3DzczDWDPKt3lusp-yzlY1hcAtApIl7mDx7kOfMxfviy-VeuYo6Zpny_5M7N1t0_5H2kL-nN6VBvBeimN3D31inN_yJ297jy0MKr4OCkumThVE30DyBnmthvu8etEvt6H2lJ6NnyGdr0zzWNQHDWKJGKj5OTMulj7BcXI"
-                alt="Logo de Mangle"
-                className="h-9 w-auto md:h-10"
+              <Image
+                src="/mangle-creative-logo.jpg"
+                alt="Logo de mangle"
+                className="h-9 w-auto md:h-10 rounded-full"
+                height={45}
+                width={45}
               />
-              <span className="font-[var(--font-plus-jakarta)] text-lg font-extrabold tracking-tight text-[#644e8e] md:text-xl">
-                Mangle
-              </span>
             </div>
 
             <nav className="hidden items-center gap-8 font-[var(--font-plus-jakarta)] text-sm font-bold uppercase tracking-[0.2em] text-[#49454f] lg:flex">
@@ -155,39 +153,35 @@ export default function Page() {
       </header>
 
       <main>
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKytpRKKbWK2_jbTFNBhqxBFvJ4USXCwSN4h49EQve8zW48GJ5MKH8KvRd7LoLjGjGbvJFDF4JJ4E6rTqH2XDwA6zCkIi5sc5OLt8sxS2WsFO2vXKO0gbmcuD-fFLgTMKMw_g5iBAN1NG6Hdb7f5eCJTw4j8ZfqEo4YkjUjInBIiSHzz5Eo5RRsEUpirQVS67Nw40Rg-7dl8tkKO-s2xdo7GwHrdUUQ9pNJy6Y4jxtkj1_ZgYbOSJdx-X2bRvbIy4aoeeseahQdkI"
-              alt="Montaje elegante para un evento"
-              className="h-full w-full scale-105 object-cover"
+            <Image
+              src="/background.png"
+              alt="Fondo floral"
+              fill
+              priority
+              quality={100}
+              sizes="100vw"
+              className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-[#fdf8fd]/95" />
+
+            <div className="absolute inset-0 bg-linear-to-b from-black/25 via-black/10 to-[#fdf8fd]" />
           </div>
 
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute right-[10%] top-[20%] h-52 w-52 rounded-full bg-[#fdbb2a]/35 blur-[100px] md:h-64 md:w-64" />
-            <div className="absolute bottom-[20%] left-[5%] h-72 w-72 rounded-full bg-[#b94c78]/25 blur-[120px] md:h-80 md:w-80" />
-
-            <div className="absolute bottom-[28%] left-[8%] hidden rounded-full bg-[#fdbb2a] p-5 shadow-2xl md:block animate-[float_6s_ease-in-out_infinite_1s]">
-              <PartyPopper className="h-9 w-9 text-[#6d4d00]" />
-            </div>
-          </div>
-
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-32 pb-16 text-center md:px-8 md:pt-40 md:pb-20 md:text-left">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 pt-28 text-center md:px-8 md:pb-20 md:pt-40 md:text-left">
             <div className="max-w-4xl">
-              <span className="mb-6 inline-block rounded-full border border-[#644e8e]/20 bg-[#644e8e]/20 px-5 py-2 text-xs font-bold uppercase tracking-[0.28em] text-[#7d67a8] md:mb-8 md:text-sm">
+              <span className="mb-6 inline-block rounded-full border border-primary/35 bg-background/85 px-5 py-2 text-xs font-bold uppercase tracking-[0.28em] text-primary-soft shadow-md backdrop-blur-sm md:mb-8 md:text-sm">
                 Donde el arte se convierte en evento
               </span>
 
-              <h1 className="mb-6 font-[var(--font-plus-jakarta)] text-5xl font-black leading-[0.9] tracking-tight text-[#1c1b1f] sm:text-6xl md:mb-8 md:text-8xl lg:text-[9rem]">
+              <h1 className="mb-6 font-heading text-5xl font-black leading-[0.9] tracking-tight text-foreground sm:text-6xl md:mb-8 md:text-8xl lg:text-[9rem]">
                 Creamos <br />
-                <span className="italic text-[#644e8e]">momentos</span>
+                <span className="italic text-primary">momentos</span>
                 <br />
                 inolvidables
               </h1>
 
-              <p className="mb-10 max-w-2xl text-lg font-light leading-relaxed text-[#49454f] sm:text-xl md:mb-12 md:text-3xl">
+              <p className="mb-10 max-w-2xl text-lg font-light leading-relaxed text-foreground sm:text-xl md:mb-12 md:text-3xl">
                 Tu visión, nuestra narrativa visual. Diseñamos celebraciones con
                 identidad, emoción y una estética que se recuerda.
               </p>
@@ -195,7 +189,7 @@ export default function Page() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="#portafolio"
-                  className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#644e8e] px-8 py-4 text-lg font-black text-white shadow-2xl transition-all hover:scale-105 sm:w-auto md:px-10 md:py-5 md:text-xl"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-lg font-black text-white shadow-2xl transition-all hover:scale-105 sm:w-auto md:px-10 md:py-5 md:text-xl"
                 >
                   Explora la magia
                   <ArrowDown className="h-5 w-5" />
@@ -207,20 +201,19 @@ export default function Page() {
 
         <section
           id="servicios"
-          className="relative overflow-hidden bg-[#fdf8fd] py-20 md:py-32"
+          className="relative overflow-hidden bg-background py-20 md:py-32"
         >
-          <div className="absolute right-0 top-0 -z-10 h-[520px] w-[520px] translate-x-1/3 -translate-y-1/3 rounded-full bg-[#ece6ec] opacity-60 blur-2xl" />
+          <div className="absolute right-0 top-0 -z-10 h-[520px] w-[520px] translate-x-1/3 -translate-y-1/3 rounded-full bg-muted opacity-60 blur-2xl" />
 
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="mb-16 grid items-end gap-8 lg:grid-cols-12 md:mb-24">
               <div className="lg:col-span-7">
-                <h2 className="text-4xl font-black leading-tight tracking-tight text-[#1c1b1f] sm:text-5xl md:text-7xl lg:text-8xl">
-                  Nuestras{" "}
-                  <span className="text-[#9a3360]">especialidades</span>
+                <h2 className="text-4xl font-black leading-tight tracking-tight text-foreground sm:text-5xl md:text-7xl lg:text-8xl">
+                  Nuestras <span className="text-tertiary">especialidades</span>
                 </h2>
               </div>
               <div className="lg:col-span-5">
-                <p className="border-l-4 border-[#644e8e] pl-5 text-lg leading-relaxed text-[#49454f] md:pl-8 md:text-xl">
+                <p className="border-l-4 border-primary pl-5 text-lg leading-relaxed text-muted md:pl-8 md:text-xl">
                   Desde celebraciones íntimas hasta experiencias de marca. Cada
                   servicio se diseña como una historia hecha a tu medida.
                 </p>
@@ -273,28 +266,19 @@ export default function Page() {
 
         <section
           id="portafolio"
-          className="overflow-hidden bg-[#1c1b1f] py-20 text-[#fdf8fd] md:py-32"
+          className="overflow-hidden bg-foreground py-20 text-background md:py-32"
         >
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="mb-16 flex flex-col gap-10 md:mb-24 md:flex-row md:items-end md:justify-between">
               <div className="max-w-3xl">
                 <h2 className="mb-6 text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl lg:text-8xl">
                   Nuestra <br />
-                  <span className="italic text-[#d3bbff]">narrativa</span>
+                  <span className="italic text-primary-soft">narrativa</span>
                 </h2>
-                <p className="max-w-xl text-lg font-light leading-relaxed text-[#cbc4d0] md:text-2xl">
+                <p className="max-w-xl text-lg font-light leading-relaxed text-surface-soft md:text-2xl">
                   Una selección de atmósferas, conceptos y producciones creadas
                   para clientes que quieren algo realmente memorable.
                 </p>
-              </div>
-
-              <div className="self-start md:self-auto animate-[float_6s_ease-in-out_infinite]">
-                <div className="flex flex-col items-center gap-2 rounded-full bg-[#9a3360] px-8 py-8 text-center shadow-2xl md:-rotate-12 md:px-10 md:py-10">
-                  <span className="text-3xl font-black md:text-4xl">150+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] md:text-xs">
-                    Historias
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -306,7 +290,7 @@ export default function Page() {
                   className="h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/85 to-transparent p-6 md:p-10 lg:p-12">
-                  <span className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[#d3bbff] md:mb-4 md:text-sm">
+                  <span className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-primary-soft md:mb-4 md:text-sm">
                     Verano editorial
                   </span>
                   <h3 className="max-w-lg text-3xl font-black leading-none md:text-5xl lg:text-6xl">
@@ -330,14 +314,14 @@ export default function Page() {
                   </div>
                 </article>
 
-                <article className="group relative overflow-hidden rounded-[2rem] bg-[#fdbb2a] h-[260px] md:h-full">
+                <article className="group relative overflow-hidden rounded-[2rem] bg-secondary h-[260px] md:h-full">
                   <img
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8m48r7jF6g0n_SUIHy8YCiXmd_mc__LSQ6ZXlHyQLWtGAgZj74cT5W3iF_PCHrE4n1_t9rt4Peim9MzutPRRF1twBqOrc6hGLAx_cYGjda_Sn0ER324Ls_KWY4Rrmp09ePBS7gd4GBi1zzTOM9sVAVc1wItJBGxnQ4mpebcSWH08QwoV8hfHpD9goxV_e3D0hlFkIQJeqj-pDZ2_rc0Wi1x_vrYiWSnyaB3AQPqjwVlVYbnAK9y07soHCiEVHWvdHL4pN_7uVqn8"
                     alt="Garden party de lujo"
                     className="h-full w-full object-cover opacity-60 mix-blend-multiply transition-transform duration-[2000ms] group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex items-center justify-center p-6 md:p-8">
-                    <h3 className="text-center text-3xl font-black text-[#6d4d00] md:text-4xl">
+                    <h3 className="text-center text-3xl font-black text-secondary-dark md:text-4xl">
                       Garden party royale
                     </h3>
                   </div>
@@ -351,8 +335,8 @@ export default function Page() {
           id="filosofia"
           className="relative overflow-hidden py-20 md:py-36"
         >
-          <div className="absolute inset-0 bg-[#644e8e]/5" />
-          <div className="absolute right-[3%] top-[8%] hidden h-80 w-80 rounded-full border-[32px] border-[#fdbb2a]/30 md:block" />
+          <div className="absolute inset-0 bg-primary/5" />
+          <div className="absolute right-[3%] top-[8%] hidden h-80 w-80 rounded-full border-[32px] border-secondary/30 md:block" />
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-8">
             <div className="flex flex-col gap-14 lg:flex-row lg:items-center lg:gap-24 xl:gap-32">
@@ -365,20 +349,20 @@ export default function Page() {
                   />
                 </div>
 
-                <div className="absolute -left-3 -top-3 rounded-full bg-[#9a3360] p-4 shadow-2xl md:-left-6 md:-top-6 md:p-6 lg:-left-8 lg:-top-8">
+                <div className="absolute -left-3 -top-3 rounded-full bg-tertiary p-4 shadow-2xl md:-left-6 md:-top-6 md:p-6 lg:-left-8 lg:-top-8">
                   <Flower2 className="h-7 w-7 text-white md:h-9 md:w-9 lg:h-11 lg:w-11" />
                 </div>
               </div>
 
               <div className="w-full lg:w-1/2">
-                <span className="mb-6 block text-xs font-black uppercase tracking-[0.4em] text-[#644e8e] md:mb-8 md:text-sm">
+                <span className="mb-6 block text-xs font-black uppercase tracking-[0.4em] text-primary md:mb-8 md:text-sm">
                   Nuestra esencia
                 </span>
-                <h2 className="mb-8 text-4xl font-black leading-[0.95] tracking-tight text-[#1c1b1f] sm:text-5xl md:mb-10 md:text-7xl lg:text-8xl">
+                <h2 className="mb-8 text-4xl font-black leading-[0.95] tracking-tight text-foreground sm:text-5xl md:mb-10 md:text-7xl lg:text-8xl">
                   El manifiesto de la <br />
-                  <span className="text-[#644e8e]">pausa creativa</span>
+                  <span className="text-primary">pausa creativa</span>
                 </h2>
-                <p className="mb-10 text-lg font-light italic leading-relaxed text-[#49454f] md:mb-12 md:text-2xl">
+                <p className="mb-10 text-lg font-light italic leading-relaxed text-muted md:mb-12 md:text-2xl">
                   “No organizamos eventos, diseñamos atmósferas temporales donde
                   el tiempo se pone al servicio de la belleza.”
                 </p>
@@ -447,106 +431,6 @@ export default function Page() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-[#1c1b1f] py-16 text-[#fdf8fd] md:py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-8">
-          <div className="flex flex-col gap-12 border-b border-white/10 pb-12 md:flex-row md:items-start md:justify-between md:gap-16 md:pb-16">
-            <div className="max-w-sm">
-              <div className="mb-6 flex items-center gap-3 md:mb-8">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDDXXV9vkkJRr4j-v3GFNtMFxksLgEIKXcCFcRnylRH2Ey4PjX0bLen6vhM7d-wUwMOU4iIZAnYrRN3S8AAVtAAV9SuDiVomfm30SfZSDLZeD001LMK1ybRatvNfUi9wSzTjrPaMWR9rJGfNc2lb5ONIZJNpXr8Ee9NbrGHSLE77KtxsEDlZxPjwYdtmsPeilLl-80-36eQgHzhaHegj4ogtyV-TbzQNKpdO1sTQPi-5IEJ2y1_1kSGlD0yI_xjGJl0p86HJVGnvI"
-                  alt="Logo de Mangle"
-                  className="h-9 w-auto brightness-0 invert md:h-10"
-                />
-                <span className="text-xl font-black text-white md:text-2xl">
-                  Mangle
-                </span>
-              </div>
-              <p className="text-base font-light leading-relaxed text-[#cbc4d0] md:text-lg">
-                Transformamos eventos en experiencias sensoriales y editoriales,
-                con una propuesta visual cuidada y memorable.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:gap-16 lg:gap-24">
-              <div className="flex flex-col gap-3 md:gap-4">
-                <span className="text-xs font-black uppercase tracking-[0.25em] text-[#d3bbff]">
-                  Explora
-                </span>
-                <a
-                  href="#portafolio"
-                  className="transition-colors hover:text-[#d3bbff]"
-                >
-                  Proyectos
-                </a>
-                <a
-                  href="#servicios"
-                  className="transition-colors hover:text-[#d3bbff]"
-                >
-                  Servicios
-                </a>
-                <a
-                  href="#filosofia"
-                  className="transition-colors hover:text-[#d3bbff]"
-                >
-                  Manifiesto
-                </a>
-              </div>
-
-              <div className="flex flex-col gap-3 md:gap-4">
-                <span className="text-xs font-black uppercase tracking-[0.25em] text-[#d3bbff]">
-                  Redes
-                </span>
-                <a href="#" className="transition-colors hover:text-[#d3bbff]">
-                  Instagram
-                </a>
-                <a href="#" className="transition-colors hover:text-[#d3bbff]">
-                  Pinterest
-                </a>
-                <a href="#" className="transition-colors hover:text-[#d3bbff]">
-                  Vimeo
-                </a>
-              </div>
-
-              <div className="flex flex-col gap-3 md:gap-4">
-                <span className="text-xs font-black uppercase tracking-[0.25em] text-[#d3bbff]">
-                  Contacto
-                </span>
-                <a href="#" className="transition-colors hover:text-[#d3bbff]">
-                  Correo
-                </a>
-                <a
-                  href="https://wa.me/yourlink"
-                  className="transition-colors hover:text-[#d3bbff]"
-                >
-                  WhatsApp
-                </a>
-                <a href="#" className="transition-colors hover:text-[#d3bbff]">
-                  Press kit
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-4 pt-8 text-sm text-[#cbc4d0] md:flex-row md:items-center md:justify-between md:pt-10">
-            <p>© 2026 Mangle Creative. Todos los derechos reservados.</p>
-            <div className="flex flex-wrap gap-6 md:gap-8">
-              <a
-                href="#"
-                className="underline decoration-[#644e8e]/30 transition-colors hover:text-white"
-              >
-                Política de privacidad
-              </a>
-              <a
-                href="#"
-                className="underline decoration-[#644e8e]/30 transition-colors hover:text-white"
-              >
-                Términos y condiciones
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
 
       <style jsx global>{`
         html,
