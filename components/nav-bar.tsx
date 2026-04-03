@@ -27,7 +27,7 @@ export function NavBar() {
     <header className="fixed left-1/2 top-4 z-50 w-[92%] max-w-7xl -translate-x-1/2 md:top-6">
       <div className="rounded-full border border-white/20 bg-white/70 px-4 py-3 shadow-2xl backdrop-blur-xl md:px-8 md:py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link href="#inicio" className="flex items-center gap-3 cursor-pointer" >
+          <a href="#inicio" className="flex items-center gap-3 cursor-pointer" >
             <Image
               src="/mangle-creative-logo.jpg"
               alt="Logo de Mangle"
@@ -35,7 +35,7 @@ export function NavBar() {
               height={45}
               className="h-9 w-auto rounded-full md:h-10"
             />
-          </Link>
+          </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (
